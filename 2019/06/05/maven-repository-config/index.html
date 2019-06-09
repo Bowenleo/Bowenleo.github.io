@@ -6,20 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>第一篇博客 | Bowen&#39;Blog</title>
+  <title>maven 本地仓库的配置以及如何修改默认.m2仓库位置 | Bowen&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一章 书山有路勤为径，学海无涯苦作舟">
-<meta name="keywords" content="spring,spring mvc">
+  <meta name="description" content="本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。">
+<meta name="keywords" content="maven">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇博客">
-<meta property="og:url" content="http://yoursite.com/2019/06/05/spring/index.html">
+<meta property="og:title" content="maven 本地仓库的配置以及如何修改默认.m2仓库位置">
+<meta property="og:url" content="http://yoursite.com/2019/06/05/maven-repository-config/index.html">
 <meta property="og:site_name" content="Bowen&#39;Blog">
-<meta property="og:description" content="第一章 书山有路勤为径，学海无涯苦作舟">
+<meta property="og:description" content="本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-06T09:32:37.012Z">
+<meta property="og:image" content="http://yoursite.com/images/maven1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/maven2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/maven3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/maven4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/maven5.jpg">
+<meta property="og:updated_time" content="2019-06-09T13:02:01.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇博客">
-<meta name="twitter:description" content="第一章 书山有路勤为径，学海无涯苦作舟">
+<meta name="twitter:title" content="maven 本地仓库的配置以及如何修改默认.m2仓库位置">
+<meta name="twitter:description" content="本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。">
+<meta name="twitter:image" content="http://yoursite.com/images/maven1.jpg">
   
   
     <link rel="icon" href="/assets/img/icon.png">
@@ -147,14 +153,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-spring" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-maven-repository-config" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      第一篇博客
+      maven 本地仓库的配置以及如何修改默认.m2仓库位置
     </h1>
   
 
@@ -168,7 +174,7 @@
           </a>
           
         
-        <a href="/2019/06/05/spring/" class="archive-article-date">
+        <a href="/2019/06/05/maven-repository-config/" class="archive-article-date">
   	<time datetime="2019-06-05T13:13:29.302Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
 </a>
         
@@ -176,8 +182,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><p> 书山有路勤为径，学海无涯苦作舟<br> <a id="more"></a></p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p> 内容</p>
+        <p>   本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。 </p>
+<a id="more"></a>
+
+<p><strong>默认仓库的存储位置</strong></p>
+<p>Maven缺省的本地仓库路径为${user.home}/.m2/repository<br>具体如下图<br>  <img src="/images/maven1.jpg" alt></p>
+<p><strong>自定义修改仓库的存储位置：</strong></p>
+<p>可改变默认的 .m2 目录下的默认本地存储库文件夹<br>通过修改${user.home}/.m2/settings.xml 配置本地仓库路径 ，没有settings这个xml文件就新建，或者如下复制个；具体看图：<br><img src="/images/maven2.jpg" alt></p>
+<p>模板里面的配置项都是没有修改的。就是个空白的文件，你直接修改如下图所示，就可以。简单易懂<br><img src="/images/maven3.jpg" alt></p>
+<p><strong>具体就是修改如下的Xml代码</strong><br><settings><br>  <localrepository>自己仓库的存放目录，我的仓库已经移动到e盘了，具体看上面的那个图的箭头所指的位置</localrepository><br></settings> </p>
+<p><strong>你也可以自己如下测试：</strong></p>
+<p>先备份自己的仓库文件即.m2目录下的repository文件夹，然后把这个文件夹移动到其他地方，直接在c盘移动快(这个只为测试啦，要是测试OK，肯定移动到c盘之外的其他盘)，因为仅仅是重写了个目录指针而已，文件实际没动。</p>
+<p>再看自己的maven项目，发现所有的spring 框架相关的引入包和一些其他包都报错了，那就说明，你项目用的就是这里的包。</p>
+<p>然后再新建settings.xml文件，修改你的对应目录，完之后再看你的项目，发现原来的报错就消失了。当然，编辑器得有个重新建索引的时间。</p>
+<p>我用的是intelliJ idea，他自动建完索引之后，项目就又OK啦。</p>
+<p>如下图，看到在 intelliJ idea 编辑器里面对maven进行配置。</p>
+<p>一般默认配置是这样的：<br><img src="/images/maven4.jpg" alt></p>
+<p>这样的话，你就修改他默认位置的setting.xml文件，就可以修改，本地仓库的地址啦</p>
+<p>看到后面有override这个词，那么这个也是可以设置的。</p>
+<p>如下：<br><img src="/images/maven5.jpg" alt></p>
+<p>这样，你就可以随意配置自己的本地仓库，你的仓库就可以有多个，不会因为有多个项目，比如一个是公司的项目，一个是你自己新建的项目，而他们都使用一个本地仓库而烦恼，这样子，你就可以 给各自的项目配置一个本地仓库使用啦。</p>
 
       
 
@@ -222,11 +246,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">spring mvc</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
         		</li>
       		
 		</ul>
@@ -238,7 +258,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Diary//" class="article-tag-list-link color1">Diary</a>
+        			<a href="/categories/Maven//" class="article-tag-list-link color1">Maven</a>
         		</li>
       		
 		</ul>
@@ -293,7 +313,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/05/spring/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/05/maven-repository-config/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -336,7 +356,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一章"><span class="toc-number">1.</span> <span class="toc-text">第一章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章"><span class="toc-number">1.1.</span> <span class="toc-text">第二章</span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -440,11 +460,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">spring mvc</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
             
             <div class="clearfix"></div>
