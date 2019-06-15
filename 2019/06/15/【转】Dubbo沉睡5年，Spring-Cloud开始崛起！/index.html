@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="Bowen&#39;Blog">
 <meta property="og:description" content="原文链接:https://blog.csdn.net/eson_15/article/details/83651732 通常而言，微服务架构是一种架构模式或者说一种架构风格，它提倡将单一应用程序划分成一组小的服务，每个服务运行在其独立的进程中，服务之间互相协调、互相配合，为用户提供最终的价值。服务之间采用轻量级的通信机制（通常是基于HTTP的RESTful API）。每个服务都围绕着具体业务进行构">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/06/15/【转】Dubbo沉睡5年，Spring-Cloud开始崛起！/%5Cimages%5Cmicroservices1.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/06/15/【转】Dubbo沉睡5年，Spring-Cloud开始崛起！/%5Cimages%5Cmicroservices2.jpg">
-<meta property="og:updated_time" content="2019-06-15T13:46:34.311Z">
+<meta property="og:image" content="http://yoursite.com/images/microservices1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/microservices2.jpg">
+<meta property="og:updated_time" content="2019-06-15T13:54:41.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【转】Dubbo沉睡5年，Spring Cloud开始崛起！">
 <meta name="twitter:description" content="原文链接:https://blog.csdn.net/eson_15/article/details/83651732 通常而言，微服务架构是一种架构模式或者说一种架构风格，它提倡将单一应用程序划分成一组小的服务，每个服务运行在其独立的进程中，服务之间互相协调、互相配合，为用户提供最终的价值。服务之间采用轻量级的通信机制（通常是基于HTTP的RESTful API）。每个服务都围绕着具体业务进行构">
-<meta name="twitter:image" content="http://yoursite.com/2019/06/15/【转】Dubbo沉睡5年，Spring-Cloud开始崛起！/%5Cimages%5Cmicroservices1.jpg">
+<meta name="twitter:image" content="http://yoursite.com/images/microservices1.jpg">
   
   
     <link rel="icon" href="/assets/img/icon.png">
@@ -183,9 +183,9 @@
 <p>通常而言，微服务架构是一种架构模式或者说一种架构风格，它提倡将单一应用程序划分成一组小的服务，每个服务运行在其独立的进程中，服务之间互相协调、互相配合，为用户提供最终的价值。服务之间采用轻量级的通信机制（通常是基于HTTP的RESTful API）。每个服务都围绕着具体业务进行构建，并且能够被独立地部署到生产环境、类生产环境等。另外，应尽量避免统一的、集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言、工具对其进行构建，可以有一个非常轻量级的集中式管理来协调这些服务，可以使用不同的语言来开发这些服务，也可以使用不同的数据存储。</p>
 <a id="more"></a>
 <h2 id="1-微服务是什么"><a href="#1-微服务是什么" class="headerlink" title="1.微服务是什么"></a>1.微服务是什么</h2><p>微服务化的核心就是将传统的一站式应用，根据业务拆分成一个一个的服务，彻底去掉耦合，每一个微服务提供单个业务功能，一个服务只做一件事。<br>从技术角度讲就是一种小而独立的处理过程，类似与进程的概念，能够自行单独启动或销毁，可以拥有自己独立的数据库。从理论角度，这里有篇微服务架构的提出者马丁福特的论文（本文的图片也是出自于该作者的文章之中，版权归原作者所有。）：<br><a href="https://martinfowler.com/articles/microservices.html" target="_blank" rel="noopener">https://martinfowler.com/articles/microservices.html</a><br>论文中提到了微服务和传统架构的区别，传统架构（单机系统），一个项目一个工程：比如商品、订单、交易、库存等等，统一部署，一个进程。如下图所示：</p>
-<p><img src="%5Cimages%5Cmicroservices1.jpg" alt="microservices1"></p>
+<p><img src="/images/microservices1.jpg" alt></p>
 <p>微服务架构（分布式系统），各个模块/服务，各自独立出来，“让专业的人干专业的事”，独立部署。分布式系统中，不同的服务可以使用各自独立的数据库。如下图所示：</p>
-<p><img src="%5Cimages%5Cmicroservices2.jpg" alt="microservices2"></p>
+<p><img src="/images/microservices2.jpg" alt></p>
 <h2 id="2-微服务的优缺点"><a href="#2-微服务的优缺点" class="headerlink" title="2.微服务的优缺点"></a>2.微服务的优缺点</h2><p>优点：</p>
 <blockquote>
 <p>1.每个服务足够内聚，足够小，代码容易理解。这样能聚焦一个只当的业务功能或业务需求。<br>2.开发简单、开发效率提高，一个服务可能就是专业的只干一件事<br>微服务能够被小团队单独开发，这个小团队可以是2到5人的开发人员组成。<br>3.微服务是松耦合的，是有功能意义的服务，无论是在开发阶段或部署阶段都是独立的。<br>4.微服务能使用不同的语言开发。<br>5.易于和第三方集成，微服务运行容易且灵活的方式集成自动部署，通过持续集成工具，如Jenkins，Hudson，bamboo。<br>6.微服务易于被一个开发人员理解、修改和维护，这样小团队能够更关注自己的工作成果，无需通过合作才能体现价值。<br>7.微服务允许你利用融合最新技术。<br>微服务只是业务逻辑的代码，不会和HTML/CSS或其他界面组件混合，即前后端分离。<br>8.每个微服务都有自己的存储能力，可以有自己的数据库，也可以有统一数据库。</p>
