@@ -6,19 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Bowen&#39;Blog</title>
+  <title>maven 本地仓库的配置以及如何修改默认.m2仓库位置 | Bowen&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。">
+<meta name="keywords" content="maven">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/06/05/hello-world/index.html">
+<meta property="og:title" content="maven 本地仓库的配置以及如何修改默认.m2仓库位置">
+<meta property="og:url" content="http://yoursite.com/2019/06/05/maven 本地仓库的配置以及如何修改默认.m2仓库位置/index.html">
 <meta property="og:site_name" content="Bowen&#39;Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-06T09:23:57.983Z">
+<meta property="og:image" content="http://yoursite.com/images/maven1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/maven2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/maven3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/maven4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/maven5.jpg">
+<meta property="og:updated_time" content="2019-06-09T13:02:01.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="maven 本地仓库的配置以及如何修改默认.m2仓库位置">
+<meta name="twitter:description" content="本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。">
+<meta name="twitter:image" content="http://yoursite.com/images/maven1.jpg">
   
   
     <link rel="icon" href="/assets/img/icon.png">
@@ -146,14 +153,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-maven 本地仓库的配置以及如何修改默认.m2仓库位置" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      maven 本地仓库的配置以及如何修改默认.m2仓库位置
     </h1>
   
 
@@ -167,28 +174,34 @@
           </a>
           
         
-        <a href="/2019/06/05/hello-world/" class="archive-article-date">
-  	<time datetime="2019-06-05T12:57:04.055Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
+        <a href="/2019/06/05/maven 本地仓库的配置以及如何修改默认.m2仓库位置/" class="archive-article-date">
+  	<time datetime="2019-06-05T13:13:29.302Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p>   本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。 </p>
 <a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p><strong>默认仓库的存储位置</strong></p>
+<p>Maven缺省的本地仓库路径为${user.home}/.m2/repository<br>具体如下图<br>  <img src="/images/maven1.jpg" alt></p>
+<p><strong>自定义修改仓库的存储位置：</strong></p>
+<p>可改变默认的 .m2 目录下的默认本地存储库文件夹<br>通过修改${user.home}/.m2/settings.xml 配置本地仓库路径 ，没有settings这个xml文件就新建，或者如下复制个；具体看图：<br><img src="/images/maven2.jpg" alt></p>
+<p>模板里面的配置项都是没有修改的。就是个空白的文件，你直接修改如下图所示，就可以。简单易懂<br><img src="/images/maven3.jpg" alt></p>
+<p><strong>具体就是修改如下的Xml代码</strong><br><settings><br>  <localrepository>自己仓库的存放目录，我的仓库已经移动到e盘了，具体看上面的那个图的箭头所指的位置</localrepository><br></settings> </p>
+<p><strong>你也可以自己如下测试：</strong></p>
+<p>先备份自己的仓库文件即.m2目录下的repository文件夹，然后把这个文件夹移动到其他地方，直接在c盘移动快(这个只为测试啦，要是测试OK，肯定移动到c盘之外的其他盘)，因为仅仅是重写了个目录指针而已，文件实际没动。</p>
+<p>再看自己的maven项目，发现所有的spring 框架相关的引入包和一些其他包都报错了，那就说明，你项目用的就是这里的包。</p>
+<p>然后再新建settings.xml文件，修改你的对应目录，完之后再看你的项目，发现原来的报错就消失了。当然，编辑器得有个重新建索引的时间。</p>
+<p>我用的是intelliJ idea，他自动建完索引之后，项目就又OK啦。</p>
+<p>如下图，看到在 intelliJ idea 编辑器里面对maven进行配置。</p>
+<p>一般默认配置是这样的：<br><img src="/images/maven4.jpg" alt></p>
+<p>这样的话，你就修改他默认位置的setting.xml文件，就可以修改，本地仓库的地址啦</p>
+<p>看到后面有override这个词，那么这个也是可以设置的。</p>
+<p>如下：<br><img src="/images/maven5.jpg" alt></p>
+<p>这样，你就可以随意配置自己的本地仓库，你的仓库就可以有多个，不会因为有多个项目，比如一个是公司的项目，一个是你自己新建的项目，而他们都使用一个本地仓库而烦恼，这样子，你就可以 给各自的项目配置一个本地仓库使用啦。</p>
 
       
 
@@ -228,7 +241,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Maven//" class="article-tag-list-link color1">Maven</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -278,7 +313,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/05/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/05/maven 本地仓库的配置以及如何修改默认.m2仓库位置/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,11 +327,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/06/05/maven-repository-config/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/06/13/你真的会用Gson吗Gson使用指南（一）/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          maven 本地仓库的配置以及如何修改默认.m2仓库位置
+          你真的会用Gson吗?Gson使用指南（一）
         
       </div>
     </a>
@@ -325,7 +360,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -429,11 +464,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Gson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Dubbo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
             
             <div class="clearfix"></div>

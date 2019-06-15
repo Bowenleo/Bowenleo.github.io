@@ -144,20 +144,202 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Gson" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-【转】Dubbo沉睡5年，Spring-Cloud开始崛起！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/13/Gson/">你真的会用Gson吗?Gson使用指南（一）</a>
+      <a class="article-title" href="/2019/06/15/【转】Dubbo沉睡5年，Spring-Cloud开始崛起！/">【转】Dubbo沉睡5年，Spring Cloud开始崛起！</a>
     </h1>
   
 
 		
         
-        <a href="/2019/06/13/Gson/" class="archive-article-date">
+        <a href="/2019/06/15/【转】Dubbo沉睡5年，Spring-Cloud开始崛起！/" class="archive-article-date">
+  	<time datetime="2019-06-15T09:37:07.115Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原文链接:<a href="https://blog.csdn.net/eson_15/article/details/83651732" target="_blank" rel="noopener">https://blog.csdn.net/eson_15/article/details/83651732</a></p>
+<p>通常而言，微服务架构是一种架构模式或者说一种架构风格，它提倡将单一应用程序划分成一组小的服务，每个服务运行在其独立的进程中，服务之间互相协调、互相配合，为用户提供最终的价值。服务之间采用轻量级的通信机制（通常是基于HTTP的RESTful API）。每个服务都围绕着具体业务进行构建，并且能够被独立地部署到生产环境、类生产环境等。另外，应尽量避免统一的、集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言、工具对其进行构建，可以有一个非常轻量级的集中式管理来协调这些服务，可以使用不同的语言来开发这些服务，也可以使用不同的数据存储。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Dubbo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Spring Cloud</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/微服务//" class="article-tag-list-link color4">微服务</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/15/【转】Dubbo沉睡5年，Spring-Cloud开始崛起！/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Spring-Cloud-Eureka和Zookeeper的区别在哪？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/15/Spring-Cloud-Eureka和Zookeeper的区别在哪？/">Spring Cloud Eureka和Zookeeper的区别在哪？</a>
+    </h1>
+  
+
+		
+        
+        <a href="/2019/06/15/Spring-Cloud-Eureka和Zookeeper的区别在哪？/" class="archive-article-date">
+  	<time datetime="2019-06-15T08:53:06.705Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-CAP-理论"><a href="#1-CAP-理论" class="headerlink" title="1.CAP 理论"></a>1.CAP 理论</h2><p>在总结两者的区别之前，我们先来看一个 CAP 理论。什么叫 CAP 理论呢？CAP 理论是由 Eric Brewer 教授提出，是分布式系统中的一个重要的概念。具体如下：</p>
+<p>C（Consistency）：数据一致性。大家都知道，分布式系统中，数据会有副本。由于网络或者机器故障等因素，可能有些副本数据写入正确，有些却写入错误或者失败，这样就导致了数据的不一致了。而满足数据一致性规则，就是保证所有数据都要同步。<br>A（Availability）：可用性。我们需要获取什么数据时，都能够正常的获取到想要的数据（当然，允许可接受范围内的网络延迟），也就是说，要保证任何时候请求数据都能够正常响应。<br>P（Partition Tolerance）：分区容错性。当网络通信发生故障时，集群仍然可用，不会因为某个节点挂了或者存在问题，而影响整个系统的正常运作。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Eureka</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Zookeeper</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/微服务//" class="article-tag-list-link color4">微服务</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/15/Spring-Cloud-Eureka和Zookeeper的区别在哪？/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-你真的会用Gson吗Gson使用指南（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/13/你真的会用Gson吗Gson使用指南（一）/">你真的会用Gson吗?Gson使用指南（一）</a>
+    </h1>
+  
+
+		
+        
+        <a href="/2019/06/13/你真的会用Gson吗Gson使用指南（一）/" class="archive-article-date">
   	<time datetime="2019-06-13T14:44:11.720Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
 </a>
         
@@ -203,7 +385,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/13/Gson/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/13/你真的会用Gson吗Gson使用指南（一）/">展开全文 >></a>
         </p>
       
 
@@ -233,20 +415,20 @@
 
 
   
-    <article id="post-maven-repository-config" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-maven 本地仓库的配置以及如何修改默认.m2仓库位置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/05/maven-repository-config/">maven 本地仓库的配置以及如何修改默认.m2仓库位置</a>
+      <a class="article-title" href="/2019/06/05/maven 本地仓库的配置以及如何修改默认.m2仓库位置/">maven 本地仓库的配置以及如何修改默认.m2仓库位置</a>
     </h1>
   
 
 		
         
-        <a href="/2019/06/05/maven-repository-config/" class="archive-article-date">
+        <a href="/2019/06/05/maven 本地仓库的配置以及如何修改默认.m2仓库位置/" class="archive-article-date">
   	<time datetime="2019-06-05T13:13:29.302Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
 </a>
         
@@ -289,71 +471,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/05/maven-repository-config/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/06/05/hello-world/" class="archive-article-date">
-  	<time datetime="2019-06-05T12:57:04.055Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/05/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/05/maven 本地仓库的配置以及如何修改默认.m2仓库位置/">展开全文 >></a>
         </p>
       
 
@@ -468,11 +586,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Gson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Dubbo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
             
             <div class="clearfix"></div>

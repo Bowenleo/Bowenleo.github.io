@@ -6,26 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>maven 本地仓库的配置以及如何修改默认.m2仓库位置 | Bowen&#39;Blog</title>
+  <title>【转】Dubbo沉睡5年，Spring Cloud开始崛起！ | Bowen&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。">
-<meta name="keywords" content="maven">
+  <meta name="description" content="原文链接:https://blog.csdn.net/eson_15/article/details/83651732 通常而言，微服务架构是一种架构模式或者说一种架构风格，它提倡将单一应用程序划分成一组小的服务，每个服务运行在其独立的进程中，服务之间互相协调、互相配合，为用户提供最终的价值。服务之间采用轻量级的通信机制（通常是基于HTTP的RESTful API）。每个服务都围绕着具体业务进行构">
+<meta name="keywords" content="Dubbo,Spring Cloud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="maven 本地仓库的配置以及如何修改默认.m2仓库位置">
-<meta property="og:url" content="http://yoursite.com/2019/06/05/maven-repository-config/index.html">
+<meta property="og:title" content="【转】Dubbo沉睡5年，Spring Cloud开始崛起！">
+<meta property="og:url" content="http://yoursite.com/2019/06/15/【转】Dubbo沉睡5年，Spring-Cloud开始崛起！/index.html">
 <meta property="og:site_name" content="Bowen&#39;Blog">
-<meta property="og:description" content="本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。">
+<meta property="og:description" content="原文链接:https://blog.csdn.net/eson_15/article/details/83651732 通常而言，微服务架构是一种架构模式或者说一种架构风格，它提倡将单一应用程序划分成一组小的服务，每个服务运行在其独立的进程中，服务之间互相协调、互相配合，为用户提供最终的价值。服务之间采用轻量级的通信机制（通常是基于HTTP的RESTful API）。每个服务都围绕着具体业务进行构">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/maven1.jpg">
-<meta property="og:image" content="http://yoursite.com/images/maven2.jpg">
-<meta property="og:image" content="http://yoursite.com/images/maven3.jpg">
-<meta property="og:image" content="http://yoursite.com/images/maven4.jpg">
-<meta property="og:image" content="http://yoursite.com/images/maven5.jpg">
-<meta property="og:updated_time" content="2019-06-09T13:02:01.488Z">
+<meta property="og:image" content="g:%5CBlog%5Csource%5Cimages%5Cmicroservices1.jpg">
+<meta property="og:image" content="g:%5CBlog%5Csource%5Cimages%5Cmicroservices2.jpg">
+<meta property="og:updated_time" content="2019-06-15T09:37:46.789Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maven 本地仓库的配置以及如何修改默认.m2仓库位置">
-<meta name="twitter:description" content="本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。">
-<meta name="twitter:image" content="http://yoursite.com/images/maven1.jpg">
+<meta name="twitter:title" content="【转】Dubbo沉睡5年，Spring Cloud开始崛起！">
+<meta name="twitter:description" content="原文链接:https://blog.csdn.net/eson_15/article/details/83651732 通常而言，微服务架构是一种架构模式或者说一种架构风格，它提倡将单一应用程序划分成一组小的服务，每个服务运行在其独立的进程中，服务之间互相协调、互相配合，为用户提供最终的价值。服务之间采用轻量级的通信机制（通常是基于HTTP的RESTful API）。每个服务都围绕着具体业务进行构">
+<meta name="twitter:image" content="g:%5CBlog%5Csource%5Cimages%5Cmicroservices1.jpg">
   
   
     <link rel="icon" href="/assets/img/icon.png">
@@ -153,14 +150,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-maven-repository-config" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-【转】Dubbo沉睡5年，Spring-Cloud开始崛起！" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      maven 本地仓库的配置以及如何修改默认.m2仓库位置
+      【转】Dubbo沉睡5年，Spring Cloud开始崛起！
     </h1>
   
 
@@ -174,34 +171,231 @@
           </a>
           
         
-        <a href="/2019/06/05/maven-repository-config/" class="archive-article-date">
-  	<time datetime="2019-06-05T13:13:29.302Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
+        <a href="/2019/06/15/【转】Dubbo沉睡5年，Spring-Cloud开始崛起！/" class="archive-article-date">
+  	<time datetime="2019-06-15T09:37:07.115Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>   本地仓库是远程仓库的一个缓冲和子集，当你构建Maven项目的时候，首先会从本地仓库查找资源，如果没有，那么Maven会从远程仓库下载到你本地仓库。这样在你下次使用的时候就不需要从远程下载了。如果你所需要的jar包版本在本地仓库没有，而且也不存在于远程仓库，Maven在构建的时候会报错，这种情况可能是有些jar包的新版本没有在Maven仓库中及时更新。 </p>
+        <p>原文链接:<a href="https://blog.csdn.net/eson_15/article/details/83651732" target="_blank" rel="noopener">https://blog.csdn.net/eson_15/article/details/83651732</a></p>
+<p>通常而言，微服务架构是一种架构模式或者说一种架构风格，它提倡将单一应用程序划分成一组小的服务，每个服务运行在其独立的进程中，服务之间互相协调、互相配合，为用户提供最终的价值。服务之间采用轻量级的通信机制（通常是基于HTTP的RESTful API）。每个服务都围绕着具体业务进行构建，并且能够被独立地部署到生产环境、类生产环境等。另外，应尽量避免统一的、集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言、工具对其进行构建，可以有一个非常轻量级的集中式管理来协调这些服务，可以使用不同的语言来开发这些服务，也可以使用不同的数据存储。</p>
 <a id="more"></a>
-
-<p><strong>默认仓库的存储位置</strong></p>
-<p>Maven缺省的本地仓库路径为${user.home}/.m2/repository<br>具体如下图<br>  <img src="/images/maven1.jpg" alt></p>
-<p><strong>自定义修改仓库的存储位置：</strong></p>
-<p>可改变默认的 .m2 目录下的默认本地存储库文件夹<br>通过修改${user.home}/.m2/settings.xml 配置本地仓库路径 ，没有settings这个xml文件就新建，或者如下复制个；具体看图：<br><img src="/images/maven2.jpg" alt></p>
-<p>模板里面的配置项都是没有修改的。就是个空白的文件，你直接修改如下图所示，就可以。简单易懂<br><img src="/images/maven3.jpg" alt></p>
-<p><strong>具体就是修改如下的Xml代码</strong><br><settings><br>  <localrepository>自己仓库的存放目录，我的仓库已经移动到e盘了，具体看上面的那个图的箭头所指的位置</localrepository><br></settings> </p>
-<p><strong>你也可以自己如下测试：</strong></p>
-<p>先备份自己的仓库文件即.m2目录下的repository文件夹，然后把这个文件夹移动到其他地方，直接在c盘移动快(这个只为测试啦，要是测试OK，肯定移动到c盘之外的其他盘)，因为仅仅是重写了个目录指针而已，文件实际没动。</p>
-<p>再看自己的maven项目，发现所有的spring 框架相关的引入包和一些其他包都报错了，那就说明，你项目用的就是这里的包。</p>
-<p>然后再新建settings.xml文件，修改你的对应目录，完之后再看你的项目，发现原来的报错就消失了。当然，编辑器得有个重新建索引的时间。</p>
-<p>我用的是intelliJ idea，他自动建完索引之后，项目就又OK啦。</p>
-<p>如下图，看到在 intelliJ idea 编辑器里面对maven进行配置。</p>
-<p>一般默认配置是这样的：<br><img src="/images/maven4.jpg" alt></p>
-<p>这样的话，你就修改他默认位置的setting.xml文件，就可以修改，本地仓库的地址啦</p>
-<p>看到后面有override这个词，那么这个也是可以设置的。</p>
-<p>如下：<br><img src="/images/maven5.jpg" alt></p>
-<p>这样，你就可以随意配置自己的本地仓库，你的仓库就可以有多个，不会因为有多个项目，比如一个是公司的项目，一个是你自己新建的项目，而他们都使用一个本地仓库而烦恼，这样子，你就可以 给各自的项目配置一个本地仓库使用啦。</p>
+<h2 id="1-微服务是什么"><a href="#1-微服务是什么" class="headerlink" title="1.微服务是什么"></a>1.微服务是什么</h2><p>微服务化的核心就是将传统的一站式应用，根据业务拆分成一个一个的服务，彻底去掉耦合，每一个微服务提供单个业务功能，一个服务只做一件事。<br>从技术角度讲就是一种小而独立的处理过程，类似与进程的概念，能够自行单独启动或销毁，可以拥有自己独立的数据库。从理论角度，这里有篇微服务架构的提出者马丁福特的论文（本文的图片也是出自于该作者的文章之中，版权归原作者所有。）：<br><a href="https://martinfowler.com/articles/microservices.html" target="_blank" rel="noopener">https://martinfowler.com/articles/microservices.html</a><br>论文中提到了微服务和传统架构的区别，传统架构（单机系统），一个项目一个工程：比如商品、订单、交易、库存等等，统一部署，一个进程。如下图所示：</p>
+<p><img src="G:%5CBlog%5Csource%5Cimages%5Cmicroservices1.jpg" alt="microservices1"></p>
+<p>微服务架构（分布式系统），各个模块/服务，各自独立出来，“让专业的人干专业的事”，独立部署。分布式系统中，不同的服务可以使用各自独立的数据库。如下图所示：</p>
+<p><img src="G:%5CBlog%5Csource%5Cimages%5Cmicroservices2.jpg" alt="microservices2"></p>
+<h2 id="2-微服务的优缺点"><a href="#2-微服务的优缺点" class="headerlink" title="2.微服务的优缺点"></a>2.微服务的优缺点</h2><p>优点：</p>
+<blockquote>
+<p>1.每个服务足够内聚，足够小，代码容易理解。这样能聚焦一个只当的业务功能或业务需求。<br>2.开发简单、开发效率提高，一个服务可能就是专业的只干一件事<br>微服务能够被小团队单独开发，这个小团队可以是2到5人的开发人员组成。<br>3.微服务是松耦合的，是有功能意义的服务，无论是在开发阶段或部署阶段都是独立的。<br>4.微服务能使用不同的语言开发。<br>5.易于和第三方集成，微服务运行容易且灵活的方式集成自动部署，通过持续集成工具，如Jenkins，Hudson，bamboo。<br>6.微服务易于被一个开发人员理解、修改和维护，这样小团队能够更关注自己的工作成果，无需通过合作才能体现价值。<br>7.微服务允许你利用融合最新技术。<br>微服务只是业务逻辑的代码，不会和HTML/CSS或其他界面组件混合，即前后端分离。<br>8.每个微服务都有自己的存储能力，可以有自己的数据库，也可以有统一数据库。</p>
+</blockquote>
+<p>缺点</p>
+<blockquote>
+<p>开发人员要处理分布式系统的复杂性。</p>
+</blockquote>
+<h2 id="3-微服务的技术栈"><a href="#3-微服务的技术栈" class="headerlink" title="3.微服务的技术栈"></a>3.微服务的技术栈</h2><p>微服务的技术栈都有哪些呢？</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>微服务条目</strong></th>
+<th align="center"><strong>落地技术</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">服务开发</td>
+<td align="center">SpringBoot、Spring、SpringMVC</td>
+</tr>
+<tr>
+<td align="center">服务配置与管理</td>
+<td align="center">Netfllix公司的Archaius、阿里的Diamond等</td>
+</tr>
+<tr>
+<td align="center">服务注册与发现</td>
+<td align="center">Eureka、Consul、Zookeeper等</td>
+</tr>
+<tr>
+<td align="center">服务调用</td>
+<td align="center">Rest、RPC、gRPC</td>
+</tr>
+<tr>
+<td align="center">服务熔断器</td>
+<td align="center">Hystrix、Envoy等</td>
+</tr>
+<tr>
+<td align="center">负载均衡</td>
+<td align="center">Ribbon、Nginx等</td>
+</tr>
+<tr>
+<td align="center">服务接口调用（客户端调用服务的简化工具）</td>
+<td align="center">Feign等</td>
+</tr>
+<tr>
+<td align="center">消息队列</td>
+<td align="center">Kafka、RabbitMQ、ActiveMQ等</td>
+</tr>
+<tr>
+<td align="center">服务配置中心管理</td>
+<td align="center">SpringCloudConfig、Chef等</td>
+</tr>
+<tr>
+<td align="center">服务路由（API网关）</td>
+<td align="center">Zuul等</td>
+</tr>
+<tr>
+<td align="center">服务监控</td>
+<td align="center">Zabbix、Nagios、Metrics、Spectator等</td>
+</tr>
+<tr>
+<td align="center">全链路追踪</td>
+<td align="center">Zipkin、Brave、Dapper等</td>
+</tr>
+<tr>
+<td align="center">服务部署</td>
+<td align="center">Docker、OpenStack、Kubernetes等</td>
+</tr>
+<tr>
+<td align="center">数据流操作开发包</td>
+<td align="center">pringCloud Stream（封装与Redis、Rabbit、Kafka等发送接收消息）</td>
+</tr>
+<tr>
+<td align="center">事件消息总线</td>
+<td align="center">SpringCloud Bus</td>
+</tr>
+<tr>
+<td align="center">……</td>
+<td align="center">……</td>
+</tr>
+</tbody></table>
+<h2 id="4-为什么选择SpringCloud"><a href="#4-为什么选择SpringCloud" class="headerlink" title="4.为什么选择SpringCloud"></a>4.为什么选择SpringCloud</h2><p>当前微服务架构，Dubbo和SpringCloud比较火，另外还有Thrift、gRPC等等，下面把这些做一个比较，即可看出SpringCloud的强大之处。</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>框架</strong></th>
+<th align="center">SpringCloud</th>
+<th align="center">Dubbo/DubboX</th>
+<th align="center">gRPC</th>
+<th align="center">Thrift</th>
+<th align="center">Motan</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">功能定位</td>
+<td align="center">完整的微服务框架</td>
+<td align="center">服务框架</td>
+<td align="center">RPC框架</td>
+<td align="center">RPC框架</td>
+<td align="center">RPC框架，但整合了Zookeeper或Consul（有耦合），实现集群环境的基本的服务注册与发现</td>
+</tr>
+<tr>
+<td align="center">支持REST</td>
+<td align="center">是，Ribbon支持多种可插拔的序列化选择</td>
+<td align="center">否</td>
+<td align="center">否</td>
+<td align="center">否</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">支持RPC</td>
+<td align="center">否</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">支持多语言</td>
+<td align="center">是（REST形式）</td>
+<td align="center">否</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">服务注册与发现</td>
+<td align="center">是（Eureka）</td>
+<td align="center">是</td>
+<td align="center">否</td>
+<td align="center">否</td>
+<td align="center">是（Zookeeper/Consul）</td>
+</tr>
+<tr>
+<td align="center">负载均衡</td>
+<td align="center">是（服务端Zuul+客户端Ribbon）Zuul-服务，动态路由 云端负载均衡 Eureka（针对中间层服务器）</td>
+<td align="center">是（客户端</td>
+<td align="center">否</td>
+<td align="center">否</td>
+<td align="center">是（客户端）</td>
+</tr>
+<tr>
+<td align="center">配置服务</td>
+<td align="center">Netflix Archaius SpringCloud Server集中配置</td>
+<td align="center">否</td>
+<td align="center">否</td>
+<td align="center">否</td>
+<td align="center">是（Zookeeper提供）</td>
+</tr>
+<tr>
+<td align="center">服务调用链监控</td>
+<td align="center">是（Zuul）Zuul提供边缘服务，API网关</td>
+<td align="center">否</td>
+<td align="center">否</td>
+<td align="center">否</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">高可用/容错</td>
+<td align="center">是（服务端Hystrix+客户端Ribbon）</td>
+<td align="center">是（客户端）</td>
+<td align="center">否</td>
+<td align="center">否</td>
+<td align="center">是（客户端）</td>
+</tr>
+<tr>
+<td align="center">典型应用案例</td>
+<td align="center">Netflix</td>
+<td align="center">alibab</td>
+<td align="center">Google</td>
+<td align="center">Facebook</td>
+<td align="center">Sina</td>
+</tr>
+<tr>
+<td align="center">社区活跃程度</td>
+<td align="center">高</td>
+<td align="center">高</td>
+<td align="center">高</td>
+<td align="center">一般</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">学习难度</td>
+<td align="center">中等</td>
+<td align="center">低</td>
+<td align="center">高</td>
+<td align="center">高</td>
+<td align="center">低</td>
+</tr>
+<tr>
+<td align="center">文档丰富度</td>
+<td align="center">高</td>
+<td align="center">高</td>
+<td align="center">一般</td>
+<td align="center">一般</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">其他</td>
+<td align="center">SpringCloud Bus为我们应用程序带来了更多管理端点</td>
+<td align="center">实践的公司比较多</td>
+<td align="center">Netflix内部在开发集成gRPC</td>
+<td align="center">IDL定义</td>
+<td align="center">支持降级</td>
+</tr>
+</tbody></table>
+<p>在微服务架构的实施和落地过程中，通常我们会进行技术选型，很多人会拿阿里开源的Dubbo和Spring Cloud进行对比，实际上对比的是REST和RPC，其实Dubbo和Spring Cloud并不在同一领域，没有可比性。</p>
+<p>Spring Cloud是一个完整的微服务解决方案，正如上面的表格中展现的，它提供分布式情况下的各种解决方案合集。而Dubbo是一款高性能的Java RPC框架。Spring Cloud生态和Dubbo生态随着技术的发展，会逐渐的融合互补。</p>
+<p>老技术用Dubbo比较多，新技术一般会选Spring Cloud。Dubbo沉睡了5年，Spring Cloud像猎豹一样追上来了，可以看出，Spring Cloud现在非常火爆，也是Spring官方大力推荐的技术，很有竞争力，以后的分布式架构使用Spring Cloud也很广泛，后面我会写一些使用Spring Cloud的相关技术文章。</p>
+<hr>
 
       
 
@@ -246,7 +440,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Dubbo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Spring Cloud</a>
         		</li>
       		
 		</ul>
@@ -258,7 +456,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Maven//" class="article-tag-list-link color1">Maven</a>
+        			<a href="/categories/微服务//" class="article-tag-list-link color4">微服务</a>
         		</li>
       		
 		</ul>
@@ -313,7 +511,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/05/maven-repository-config/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/15/【转】Dubbo沉睡5年，Spring-Cloud开始崛起！/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -327,18 +525,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/06/13/Gson/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          你真的会用Gson吗?Gson使用指南（一）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/06/05/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/06/15/Spring-Cloud-Eureka和Zookeeper的区别在哪？/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring Cloud Eureka和Zookeeper的区别在哪？</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -365,7 +554,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-微服务是什么"><span class="toc-number">1.</span> <span class="toc-text">1.微服务是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-微服务的优缺点"><span class="toc-number">2.</span> <span class="toc-text">2.微服务的优缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-微服务的技术栈"><span class="toc-number">3.</span> <span class="toc-text">3.微服务的技术栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-为什么选择SpringCloud"><span class="toc-number">4.</span> <span class="toc-text">4.为什么选择SpringCloud</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -469,11 +658,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Gson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Dubbo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
             
             <div class="clearfix"></div>
