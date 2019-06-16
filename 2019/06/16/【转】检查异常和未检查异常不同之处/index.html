@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Bowen&#39;Blog</title>
+  <title>【转】检查异常和未检查异常不同之处 | Bowen&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Bowen&#39;Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="Java代码  123456789public class ExceptionTypeTest &amp;#123;       public void doSomething() throws ArithmeticException&amp;#123;           System.out.println();       &amp;#125;       public static void main()&amp;#12">
+<meta name="keywords" content="checked exception(检查异常),unchecked exception(未检查异常)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【转】检查异常和未检查异常不同之处">
+<meta property="og:url" content="http://yoursite.com/2019/06/16/【转】检查异常和未检查异常不同之处/index.html">
 <meta property="og:site_name" content="Bowen&#39;Blog">
+<meta property="og:description" content="Java代码  123456789public class ExceptionTypeTest &amp;#123;       public void doSomething() throws ArithmeticException&amp;#123;           System.out.println();       &amp;#125;       public static void main()&amp;#12">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-16T12:02:23.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bowen&#39;Blog">
+<meta name="twitter:title" content="【转】检查异常和未检查异常不同之处">
+<meta name="twitter:description" content="Java代码  123456789public class ExceptionTypeTest &amp;#123;       public void doSomething() throws ArithmeticException&amp;#123;           System.out.println();       &amp;#125;       public static void main()&amp;#12">
   
   
     <link rel="icon" href="/assets/img/icon.png">
@@ -142,36 +147,99 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-【转】检查异常和未检查异常不同之处" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/16/【转】检查异常和未检查异常不同之处/" class="archive-article-date">
-  	<time datetime="2019-06-16T11:52:42.387Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/16/【转】检查异常和未检查异常不同之处/">【转】检查异常和未检查异常不同之处</a>
+    <h1 class="article-title" itemprop="name">
+      【转】检查异常和未检查异常不同之处
     </h1>
   
 
-        <div class="article-info info-on-right">
+		
+          <br>
+		  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                  本文已被阅读: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
           
+        
+        <a href="/2019/06/16/【转】检查异常和未检查异常不同之处/" class="archive-article-date">
+  	<time datetime="2019-06-16T11:52:42.387Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Java代码 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptionTypeTest</span> </span>&#123;    </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">()</span> <span class="keyword">throws</span> ArithmeticException</span>&#123;    </span><br><span class="line">       System.out.println();    </span><br><span class="line">   &#125;    </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;    </span><br><span class="line">       ExceptionTypeTest ett = <span class="keyword">new</span> ExceptionTypeTest();    </span><br><span class="line">       ett.doSomething();    </span><br><span class="line">   &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  <a id="more"></a>
+
+<p>问题1:上面的程序能否编译通过？并说明理由。<br>解答:能编译通过。分析:按照一般常理，定义doSomething方法是定义了ArithmeticException异常，在main方法里 里面调用了该方法。那么应当继续抛出或者捕获一下。但是ArithmeticException异常是继承RuntimeException运行时异常。 java里面异常分为两大类:checkedexception(检查异常)和unchecked exception(未检<br>查异常)，对于未检查异常也叫RuntimeException(运行时异常),对于运行时异常，java编译器不要求你一定要把它捕获或者一定要继续抛出，但是对checkedexception(检查异常)要求你必须要在方法里面或者捕获或者继续抛出.</p>
+<p>问题2:上面的程序将ArithmeticException改为IOException能否编译通过？并说明理由。<br>解答:不能编译通过。分析:IOException extends Exception 是属于checked exception，必须进行处理，或者必须捕获或者必须抛出</p>
+<p>总结：java中异常分为两类:checked exception(检查异常)和unchecked exception(未检查异常),对于未检查异常也叫RuntimeException(运行时异常).<br>对未检查的异常(unchecked exception )的几种处理方式：<br>1、捕获<br>2、继续抛出<br>3、不处理<br>对检查的异常(checked exception，除了RuntimeException，其他的异常都是checked exception )的几种处理方式：<br>1、继续抛出，消极的方法，一直可以抛到java虚拟机来处理<br>2、用try…catch捕获<br>注意，对于检查的异常必须处理，或者必须捕获或者必须抛出</p>
+<hr>
+<p>异常处理(Exception)<br>1.异常：程序再运行期间发生的不正常事件，它会打断指令的正常流程。<br>异常都是发生在程序的运行期，编译出现的问题叫语法错误。</p>
+<p>2.异常的处理机制：<br>1)当程序再运行过程中出现了异常，JVM自动创建一个该类型的异常对象。同时把这个异常对象交给运行时系统。（抛出异常）<br>2）运行时系统接受到一个异常对象时，它会再产生异常的代码附近查找相应的处理方式。<br>3）异常的处理方式有两种：<br>1.捕获并处理：在异常的代码附近显示用try/catch进行处理(不合理),运行时系统捕获后会查询相应的catch处理块，再catch处理块中对该异常进行处理。<br>2.查看发生异常的方法是否有向上声明异常，有向上声明，向上级查询处理语句，如果没有向上声明，JVM中断程序的运行并处理。用throws向外声明(合理的处理方法)</p>
+<p>3.异常的分类：<br>java.lang.Throwable<br>|– Error错误：JVM内部的严重问题。无法恢复。程序人员不用处理。<br>|–Exception异常：普通的问题。通过合理的处理，程序还可以回到正常执行流程。要求编程人员要进行处理。<br>|–RuntimeException:也叫非受检异常(unchecked exception).这类异常是编程人员的逻辑问题。应该承担责任。Java编译器不进行强制要求处理。 也就是说，这类异常再程序中，可以进行处理，也可以不处理。<br>|–非RuntimeException:也叫受检异常(checked exception).这类异常是由一些外部的偶然因素所引起的。Java编译器强制要求处理。也就是说，程序必须进行对这类异常进行处理。</p>
+<p>4.常见异常：<br>1)非受检的：NullPointerException,ClassCastException,ArrayIndexsOutOfBoundsException,ArithmeticException(算术异常，除0溢出)<br>2)受检：Exception,FileNotFoundException,IOException,SQLException.</p>
+<p>5.异常处理的两种方式：<br>1）.显示用try/catch进行处理(不合理)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">try&#123;</span><br><span class="line">//可能会出现异常的代码段；</span><br><span class="line">&#125;catch(异常类型1 变量名)&#123; //处理制定类型的异常</span><br><span class="line">//对该类型异常的处理代码段；</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;catch()&#123;</span><br><span class="line">&#125;[finally&#123;</span><br><span class="line">//无论是否发生异常都要执行的代码段；</span><br><span class="line">//经常用来清理资源</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+
+<p>2）.向上声明：用throws关键字，向外声明(合理的处理方法)<br>声明本方法可能会抛出的异常列表。<br>…方法名(参数列表) throws 异常类型1，异常类型2<br>向上声明是告诉本方法的调用者，在使用本方法时，应该对这些异常进行处理。</p>
+<p>2）.向上声明：用throws关键字，向外声明(合理的处理方法)<br>声明本方法可能会抛出的异常列表。<br>…方法名(参数列表) throws 异常类型1，异常类型2<br>向上声明是告诉本方法的调用者，在使用本方法时，应该对这些异常进行处理。</p>
+<p>6.手动抛出一个异常:当程序逻辑不符合期望时，要中止后面代码的执行时。<br>在方法的代码段中，可以使用throw关键字手动抛出一个异常。<br>注意：如果手动抛出的是受检异常，那么本方法必须进行处理(应该采用向上声明这个异常);如果手动抛出的是非受检异常，那么可以进行处理，也可以不处理。</p>
+<p>7.自定义异常：当需要一些跟特定业务相关的异常信息类时。<br>可以继承继承Exception来定义一个受检异常。也可以继承自RuntimeException或其子类来定义一个非受检异常。</p>
+<p>8.异常概括：一个图两种处理方式.</p>
+<p>9.异常实践：<br>观察抛出的异常的名字和行号很重要。<br>应该捕获和处理那些已知如何处理的异常，传递那些不知如何处理的异常。<br>尽量减少try语句块的体积。<br>for(int i=1;i&lt;=1000;i++){<br>try{<br>…<br>}catch(…)<br>}不合理<br>尽量减少try-catch语句的嵌套。<br>在catch块代码段中，应该打印除该异常的堆栈跟踪信息以方便调试。</p>
+<p>使用 throws关键字来声明方法可能会抛出的异常<br>throws可以声明方法可能会抛出一个或多个异常，异常之间用’，’隔开<br>如果声明的可能会抛出的异常是非受检的，该方法的调用者可以处理也可以不处理。<br>如果声明的可能会抛出的异常是受检的，该方法的调用者必须进行处理。</p>
+<p>用throw关键字来手动抛出一个异常，<br>如果手动抛出的异常是一个受检异常，那么必须进行处理<br>处理方式有两种：<br>1.显示用try/catch进行处理(不合理)<br>2.用throws向外声明(合理的处理方法)</p>
+<p>应捕获和处理那些已知如何处理的异常，而传递那些不知如何处理的异常。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝奶茶<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/Alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/Wechatpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -187,7 +255,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -200,278 +268,117 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/16/【转】检查异常和未检查异常不同之处/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/16/【转】关于SpringBoot在实际开发中容易忽视的异常和事务问题！/" class="archive-article-date">
-  	<time datetime="2019-06-16T11:42:46.448Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/16/【转】关于SpringBoot在实际开发中容易忽视的异常和事务问题！/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【转】关于SpringBoot在实际开发中容易忽视的异常和事务问题！</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/16/【转】关于SpringBoot在实际开发中容易忽视的异常和事务问题！/">【转】关于SpringBoot在实际开发中容易忽视的异常和事务问题！</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Transactional</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Exception</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/微服务//" class="article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/15/【转】Dubbo沉睡5年，Spring-Cloud开始崛起！/" class="archive-article-date">
-  	<time datetime="2019-06-15T09:37:07.115Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/15/【转】Dubbo沉睡5年，Spring-Cloud开始崛起！/">【转】Dubbo沉睡5年，Spring Cloud开始崛起！</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Dubbo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Spring Cloud</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/微服务//" class="article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/15/Spring-Cloud-Eureka和Zookeeper的区别在哪？/" class="archive-article-date">
-  	<time datetime="2019-06-15T08:53:06.705Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/15/Spring-Cloud-Eureka和Zookeeper的区别在哪？/">Spring Cloud Eureka和Zookeeper的区别在哪？</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Eureka</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Zookeeper</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/微服务//" class="article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/13/Gson使用指南（一）/" class="archive-article-date">
-  	<time datetime="2019-06-13T14:44:11.720Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/13/Gson使用指南（一）/">你真的会用Gson吗?Gson使用指南（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Gson</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Gson//" class="article-tag-list-link color5">Gson</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/05/maven 本地仓库的配置以及如何修改默认.m2仓库位置/" class="archive-article-date">
-  	<time datetime="2019-06-05T13:13:29.302Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/05/maven 本地仓库的配置以及如何修改默认.m2仓库位置/">maven 本地仓库的配置以及如何修改默认.m2仓库位置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Maven//" class="article-tag-list-link color1">Maven</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -501,8 +408,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
